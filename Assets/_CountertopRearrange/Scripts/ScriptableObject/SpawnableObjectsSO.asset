@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05cfcb5e0bae4fe09e2a508211adcd46, type: 3}
+  m_Name: SpawnableObjectsSO
+  m_EditorClassIdentifier: Assembly-CSharp::CounterTopRearrange.SpawnableObjectsSO
+  objects:
+  - {fileID: 11400000, guid: 34c26f66306344b48afd8ad511d3ea86, type: 2}
+  - {fileID: 11400000, guid: 81f04b0ffa584fe1a02539e6d6e5105a, type: 2}
+  - {fileID: 11400000, guid: f87ea1e3fc054d798ae7fe3688bd9dfb, type: 2}
+  - {fileID: 11400000, guid: 8a2de9f2cc1442b1964c01c8c883934d, type: 2}
+  - {fileID: 11400000, guid: 025706d1382a4931ac1d3b261e39a327, type: 2}
+  - {fileID: 11400000, guid: edfd10722aca4319941054432f588148, type: 2}
+  - {fileID: 11400000, guid: f4b6ce642c3543e68446a9137348f8dd, type: 2}
+  - {fileID: 11400000, guid: a7a66061eca6450d8f5779693250bc09, type: 2}

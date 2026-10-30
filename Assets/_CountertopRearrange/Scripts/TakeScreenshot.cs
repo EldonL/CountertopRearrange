@@ -10,9 +10,51 @@ namespace CounterTopRearrange
         [SerializeField]
         private SendReceiveStringEventSO _onSendTakePictureImagePath;
         [SerializeField]  public TextMeshProUGUI _displayText; 
+        [Header("Spawnable Object Flow")]
+        [Tooltip("Countdown shown after the Take Picture press before capturing. Created automatically when missing.")]
+        [SerializeField] private CaptureCountdown _countdown;
+        [Tooltip("Countdown length in seconds. Set to 0 to capture immediately (legacy behavior).")]
+        [SerializeField] private float _countdownSeconds = 3f;
+        [Tooltip("Vision target retargeted at the selected object. Found automatically when empty.")]
+        [SerializeField] private MuseSparkVision _vision;
+        [Tooltip("Placement controller receiving the selected prefab. Found automatically when empty.")]
+        [SerializeField] private ObjectPlacementController _placement;
+
         public void TakePicture()
         {
+            if (_countdown != null && _countdown.IsPlaying)
+                return;
+            ApplySelection();
+            CaptureCountdown countdown = _countdown;
+            if (countdown == null)
+                countdown = FindAnyObjectByType<CaptureCountdown>();
+            if (countdown == null)
+                countdown = new GameObject("CaptureCountdown").AddComponent<CaptureCountdown>();
+            _countdown = countdown;
+            if (_countdownSeconds > 0f)
+                countdown.Play(_countdownSeconds, BeginCapture);
+            else
+                BeginCapture();
+        }
+
+        private void BeginCapture()
+        {
             StartCoroutine(CaptureScreenshotRoutine());
+        }
+
+        private void ApplySelection()
+        {
+            SpawnableObjectSO selected = SpawnableObjectSelection.Current;
+            if (selected == null)
+                return;
+            if (_vision == null)
+                _vision = FindAnyObjectByType<MuseSparkVision>();
+            if (_vision != null)
+                _vision.SetTargetObjectName(selected.displayName);
+            if (_placement == null)
+                _placement = FindAnyObjectByType<ObjectPlacementController>();
+            if (_placement != null)
+                _placement.SetSpawnableObject(selected);
         }
 
         private IEnumerator CaptureScreenshotRoutine()

@@ -41,6 +41,12 @@ namespace CounterTopRearrange
         [Tooltip("Seconds before a stalled capture/vision request re-enables the Take button.")]
         [SerializeField] float _busyTimeoutSeconds = 120f;
 
+        [Header("Spawnable Object")]
+        [Tooltip("Prefab chosen in the spawn menu. Overrides Book Prefab when set. Managed by SetSpawnableObject.")]
+        [SerializeField] GameObject _spawnablePrefabOverride;
+        [Tooltip("Display name of the chosen object, used in status messages.")]
+        [SerializeField] string _spawnableDisplayName;
+
         ARPlane _counterPlane;
         ARAnchor _currentAnchor;
         GameObject _currentBook;
@@ -116,6 +122,37 @@ namespace CounterTopRearrange
             }
         }
 
+        /// <summary>Selects the prefab + display name for the next placement. Called by the spawn menu.</summary>
+        public void SetSpawnableObject(SpawnableObjectSO spawnable)
+        {
+            if (spawnable == null)
+                return;
+            _spawnablePrefabOverride = spawnable.prefab;
+            if (!string.IsNullOrWhiteSpace(spawnable.displayName))
+                _spawnableDisplayName = spawnable.displayName.Trim();
+            if (!_busy)
+                RefreshGate();
+        }
+
+        string CurrentObjectName
+        {
+            get { return string.IsNullOrEmpty(_spawnableDisplayName) ? "book" : _spawnableDisplayName; }
+        }
+
+        string CurrentObjectLabel
+        {
+            get
+            {
+                string objectName = CurrentObjectName;
+                return char.ToUpperInvariant(objectName[0]) + objectName.Substring(1);
+            }
+        }
+
+        GameObject ActivePrefab
+        {
+            get { return _spawnablePrefabOverride != null ? _spawnablePrefabOverride : _bookPrefab; }
+        }
+
         void OnPlanesChanged(ARPlanesChangedEventArgs args)
         {
             UpdateCounterPlane();
@@ -180,7 +217,7 @@ namespace CounterTopRearrange
             }
 
             // Placeholder cubes pivot at their center; prefabs are expected to pivot at the base.
-            float lift = _surfaceLift + (_bookPrefab == null ? _bookSize.y * 0.5f : 0f);
+            float lift = _surfaceLift + (ActivePrefab == null ? _bookSize.y * 0.5f : 0f);
             Vector3 position = hit.pose.position + hit.pose.up * lift;
             Quaternion rotation = YawTowardCamera(position, hit.pose.rotation);
             Pose pose = new Pose(position, rotation);
@@ -188,14 +225,14 @@ namespace CounterTopRearrange
             ARAnchor anchor = await CreateAnchorAsync(pose, hit.trackableId);
             if (anchor == null)
             {
-                Fail("Could not anchor the book. Please try again.");
+                Fail("Could not anchor the " + CurrentObjectName + ". Please try again.");
                 return;
             }
 
             ReplaceCurrent(anchor, pose);
             _busy = false;
             RefreshGate();
-            SetStatus("Book placed.");
+            SetStatus(CurrentObjectLabel + " placed.");
         }
 
         bool TryFindCounterHit(Vector2 screenPoint, out ARRaycastHit hit)
@@ -298,8 +335,8 @@ namespace CounterTopRearrange
                 _currentAnchor = null;
             }
 
-            _currentBook = _bookPrefab != null
-                ? Instantiate(_bookPrefab, pose.position, pose.rotation)
+            _currentBook = ActivePrefab != null
+                ? Instantiate(ActivePrefab, pose.position, pose.rotation)
                 : BuildPlaceholderBook(pose);
             _currentAnchor = anchor;
             _currentBook.transform.SetParent(anchor.transform, true);
@@ -308,7 +345,7 @@ namespace CounterTopRearrange
         GameObject BuildPlaceholderBook(Pose pose)
         {
             GameObject book = GameObject.CreatePrimitive(PrimitiveType.Cube);
-            book.name = "PlacedBook (Placeholder)";
+            book.name = "Placed " + CurrentObjectLabel + " (Placeholder)";
             book.transform.SetPositionAndRotation(pose.position, pose.rotation);
             book.transform.localScale = _bookSize;
             return book;
@@ -344,7 +381,7 @@ namespace CounterTopRearrange
                 _takePictureButton.interactable = _counterPlane != null && !_busy;
             if (!_busy)
                 SetStatus(_counterPlane != null
-                    ? "Counter found. Take a picture to place the book."
+                    ? "Counter found. Take a picture to place the " + CurrentObjectName + "."
                     : "Scanning... point the camera at the counter.");
         }
 

@@ -56,6 +56,17 @@ public class MuseSparkVision : MonoBehaviour
         this.imagePath = imagePath;
         Ask();
     }
+
+    /// <summary>
+    /// Retargets the vision question at the selected spawnable object.
+    /// Blank names keep the legacy book question. Called by TakeScreenshot
+    /// before the capture reaches Ask(); API-key handling is untouched.
+    /// </summary>
+    public void SetTargetObjectName(string displayName)
+    {
+        question = CounterTopRearrange.SpawnablePrompt.BuildQuestion(displayName);
+    }
+
     [ContextMenu("Ask Muse Spark")]
     public void Ask()
     {
