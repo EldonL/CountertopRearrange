@@ -844,7 +844,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MuseSparkVision
   image: {fileID: 0}
   imagePath: 
-  question: where can I place an extra book
+  question: 'You are placing a book on the countertop in this photo. The photo may
+    contain overlaid UI text; ignore it. Reply with exactly one JSON object and nothing
+    else - {"x": <0-1>, "y": <0-1>, "reason": "<short reason>"}. x runs left-to-right,
+    y runs top-to-bottom, pointing at a clear flat spot on the counter where a book
+    fits.'
   model: muse-spark-1.3
   reasoningEffort: medium
   maxOutputTokens: 4096
@@ -853,7 +857,20 @@ MonoBehaviour:
   lastAnswer: 
   onAnswer:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3050000003}
+        m_TargetAssemblyTypeName: CounterTopRearrange.ObjectPlacementController,
+          Assembly-CSharp
+        m_MethodName: OnVisionAnswer
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _displayText: {fileID: 2138567380}
 --- !u!4 &1055733378
 Transform:
@@ -909,6 +926,8 @@ GameObject:
   - component: {fileID: 1101437179}
   - component: {fileID: 1101437178}
   - component: {fileID: 1101437177}
+  - component: {fileID: 1101437180}
+  - component: {fileID: 1101437181}
   m_Layer: 0
   m_Name: XR Origin
   m_TagString: Untagged
@@ -966,6 +985,38 @@ Transform:
   - {fileID: 1568860999}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1101437180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101437176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa17d122634046b4a8e23048891fafc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.XR.ARFoundation::UnityEngine.XR.ARFoundation.ARRaycastManager
+  <trackablesChanged>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  m_RaycastPrefab: {fileID: 0}
+--- !u!114 &1101437181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101437176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 728ad7fae8e460a4ba41265c7308d757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.XR.ARFoundation::UnityEngine.XR.ARFoundation.ARAnchorManager
+  <trackablesChanged>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  m_AnchorPrefab: {fileID: 0}
 --- !u!1 &1439057996
 GameObject:
   m_ObjectHideFlags: 0
@@ -1351,7 +1402,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1817186082}
   m_OnClick:
     m_PersistentCalls:
@@ -1557,6 +1608,61 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2138567378}
   m_CullTransparentMesh: 1
+--- !u!1 &3050000001
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3050000002}
+  - component: {fileID: 3050000003}
+  m_Layer: 0
+  m_Name: ObjectPlacementController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3050000002
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3050000001}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3050000003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3050000001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8807ac1251eb4b0a94f186beb4e6b181, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CounterTopRearrange.ObjectPlacementController
+  _planeManager: {fileID: 1101437177}
+  _raycastManager: {fileID: 1101437180}
+  _anchorManager: {fileID: 1101437181}
+  _vision: {fileID: 1055733377}
+  _takePictureButton: {fileID: 1817186081}
+  _statusText: {fileID: 19812403}
+  _bookPrefab: {fileID: 0}
+  _minCounterArea: 0.04
+  _surfaceLift: 0.005
+  _bookSize: {x: 0.16, y: 0.04, z: 0.23}
+  _busyTimeoutSeconds: 120
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1568,3 +1674,4 @@ SceneRoots:
   - {fileID: 1055733378}
   - {fileID: 538200982}
   - {fileID: 849795838}
+  - {fileID: 3050000002}

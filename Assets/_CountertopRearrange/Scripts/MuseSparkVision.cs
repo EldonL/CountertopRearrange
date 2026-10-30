@@ -28,7 +28,7 @@ public class MuseSparkVision : MonoBehaviour
     [Tooltip("Used only when Image (above) is empty.")]
     public string imagePath;
     [TextArea(2, 4)]
-    public string question = "where can I place an extra book";
+    public string question = "You are placing a book on the countertop in this photo. The photo may contain overlaid UI text; ignore it. Reply with exactly one JSON object and nothing else - {\"x\": <0-1>, \"y\": <0-1>, \"reason\": \"<short reason>\"}. x runs left-to-right, y runs top-to-bottom, pointing at a clear flat spot on the counter where a book fits.";
 
     [Header("Model (Meta Model API)")]
     public string model = "muse-spark-1.3";
