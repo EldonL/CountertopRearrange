@@ -25,15 +25,15 @@ namespace CounterTopRearrange
             if (_countdown != null && _countdown.IsPlaying)
                 return;
             ApplySelection();
-            CaptureCountdown countdown = _countdown;
-            if (countdown == null)
-                countdown = FindAnyObjectByType<CaptureCountdown>();
-            if (countdown == null)
-                countdown = new GameObject("CaptureCountdown").AddComponent<CaptureCountdown>();
-            _countdown = countdown;
-            if (_countdownSeconds > 0f)
-                countdown.Play(_countdownSeconds, BeginCapture);
-            else
+            // CaptureCountdown countdown = _countdown;
+            // if (countdown == null)
+            //     countdown = FindAnyObjectByType<CaptureCountdown>();
+            // if (countdown == null)
+            //     countdown = new GameObject("CaptureCountdown").AddComponent<CaptureCountdown>();
+            // _countdown = countdown;
+            // if (_countdownSeconds > 0f)
+            //     countdown.Play(_countdownSeconds, BeginCapture);
+            // else
                 BeginCapture();
         }
 
