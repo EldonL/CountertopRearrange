@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a4b4ce97fc744f18eb2b7f010343d5a, type: 3}
   m_Name: SpawnableObject_Cylinder
   m_EditorClassIdentifier: Assembly-CSharp::CounterTopRearrange.SpawnableObjectSO
-  displayName: cylinder
+  displayName: Pan
   menuImage: {fileID: 21300000, guid: c6654cd3aa3c478e9ef9b1c2a9a01f81, type: 3}
-  prefab: {fileID: 7898685905709115122, guid: ec384ffcd35a40d39c24f01d134369b1, type: 3}
+  prefab: {fileID: 6594478588007852410, guid: 9aef48994f445b54faae98915a640732, type: 3}

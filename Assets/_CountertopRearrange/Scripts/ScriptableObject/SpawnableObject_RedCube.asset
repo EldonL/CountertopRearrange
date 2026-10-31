@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a4b4ce97fc744f18eb2b7f010343d5a, type: 3}
   m_Name: SpawnableObject_RedCube
   m_EditorClassIdentifier: Assembly-CSharp::CounterTopRearrange.SpawnableObjectSO
-  displayName: red cube
+  displayName: Tea cup
   menuImage: {fileID: 21300000, guid: baee100b617241f7bbd7d2e185080e2b, type: 3}
-  prefab: {fileID: 4819575276998446989, guid: cbbb9ce7b3281254a8db522b9ac3c093, type: 3}
+  prefab: {fileID: 4565518152978747462, guid: 523c19dbbee19aa41ab6e3697be43db3, type: 3}

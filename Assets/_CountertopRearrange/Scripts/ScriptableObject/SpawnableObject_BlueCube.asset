@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a4b4ce97fc744f18eb2b7f010343d5a, type: 3}
   m_Name: SpawnableObject_BlueCube
   m_EditorClassIdentifier: Assembly-CSharp::CounterTopRearrange.SpawnableObjectSO
-  displayName: blue cube
+  displayName: Toaster
   menuImage: {fileID: 21300000, guid: b93f856fc81b4abf9ba5a80381370420, type: 3}
-  prefab: {fileID: 4819575276998446989, guid: cbbb9ce7b3281254a8db522b9ac3c093, type: 3}
+  prefab: {fileID: 8536554880155836587, guid: 5373cb8ad67331745891c1bc3090ba77, type: 3}

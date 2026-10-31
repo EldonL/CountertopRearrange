@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a4b4ce97fc744f18eb2b7f010343d5a, type: 3}
   m_Name: SpawnableObject_Capsule
   m_EditorClassIdentifier: Assembly-CSharp::CounterTopRearrange.SpawnableObjectSO
-  displayName: capsule
+  displayName: Knife Stand
   menuImage: {fileID: 21300000, guid: f9eb21f9c6f84753998a099559022108, type: 3}
-  prefab: {fileID: 943647622672517321, guid: 86d292f0a746428fb6f695a3a3c88a37, type: 3}
+  prefab: {fileID: 4262674979869209317, guid: d5f7ab296d082d14db7c2ae47b38586a, type: 3}

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a4b4ce97fc744f18eb2b7f010343d5a, type: 3}
   m_Name: SpawnableObject_Cone
   m_EditorClassIdentifier: Assembly-CSharp::CounterTopRearrange.SpawnableObjectSO
-  displayName: cone
+  displayName: Microwave
   menuImage: {fileID: 21300000, guid: 48c395b94c724de0a223cc281ccdf236, type: 3}
-  prefab: {fileID: 7898685905709115122, guid: ec384ffcd35a40d39c24f01d134369b1, type: 3}
+  prefab: {fileID: 3455191921957586694, guid: c2151fcb5c905b24bab257af6d419036, type: 3}
