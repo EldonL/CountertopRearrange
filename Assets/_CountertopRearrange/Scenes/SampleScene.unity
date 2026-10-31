@@ -1671,6 +1671,11 @@ MonoBehaviour:
   _busyTimeoutSeconds: 120
   _spawnablePrefabOverride: {fileID: 0}
   _spawnableDisplayName: 
+  _autoScalePrefabs: 1
+  _defaultMaxFootprint: 0.3
+  _defaultMaxHeight: 0.3
+  _minLargestDimension: 0.02
+  _targetSizes: []
 --- !u!1 &4110000001
 GameObject:
   m_ObjectHideFlags: 0
