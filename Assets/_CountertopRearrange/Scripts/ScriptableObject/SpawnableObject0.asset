@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a4b4ce97fc744f18eb2b7f010343d5a, type: 3}
+  m_Name: SpawnableObject0
+  m_EditorClassIdentifier: Assembly-CSharp::CounterTopRearrange.SpawnableObjectSO
+  displayName: Blender
+  menuImage: {fileID: 21300000, guid: 67404957a0ff404ab01b584957d0be11, type: 3}
+  prefab: {fileID: 6081966303601822800, guid: 8dea3515e49b0e84cbb2253db8f7a41a, type: 3}
