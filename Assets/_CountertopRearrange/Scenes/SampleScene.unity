@@ -1724,8 +1724,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CounterTopRearrange.SpawnableObjectMenu
   _catalog: {fileID: 11400000, guid: 9909fcfc59a34af4890bca5b9b894cb2, type: 2}
   _placement: {fileID: 3050000003}
-  _content: {fileID: 0}
-  _promptLabel: {fileID: 0}
+  _content: {fileID: 4110000015}
+  _promptLabel: {fileID: 4110000007}
   _menuHeight: 216
   _rightInset: 500
   _itemSize: {x: 132, y: 150}
