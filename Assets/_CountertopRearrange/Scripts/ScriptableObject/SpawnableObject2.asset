@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: SpawnableObject2
   m_EditorClassIdentifier: Assembly-CSharp::CounterTopRearrange.SpawnableObjectSO
   displayName: Knife Stand
-  menuImage: {fileID: 21300000, guid: f9eb21f9c6f84753998a099559022108, type: 3}
+  menuImage: {fileID: 21300000, guid: d242aed4e2da3694eaaff1b92c15d01c, type: 3}
   prefab: {fileID: 4262674979869209317, guid: d5f7ab296d082d14db7c2ae47b38586a, type: 3}

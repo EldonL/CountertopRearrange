@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: SpawnableObject1
   m_EditorClassIdentifier: Assembly-CSharp::CounterTopRearrange.SpawnableObjectSO
   displayName: Toaster
-  menuImage: {fileID: 21300000, guid: b93f856fc81b4abf9ba5a80381370420, type: 3}
+  menuImage: {fileID: 21300000, guid: f59a9d9839876fd4c8736a9ae70868a9, type: 3}
   prefab: {fileID: 8536554880155836587, guid: 5373cb8ad67331745891c1bc3090ba77, type: 3}

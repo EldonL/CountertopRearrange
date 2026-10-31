@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: SpawnableObject9
   m_EditorClassIdentifier: Assembly-CSharp::CounterTopRearrange.SpawnableObjectSO
   displayName: Dice
-  menuImage: {fileID: 21300000, guid: 17d65c698f3e4eb2b3cac3753ff49240, type: 3}
+  menuImage: {fileID: 21300000, guid: 364358cceb9f238418efa646a665e619, type: 3}
   prefab: {fileID: 4951248219674530715, guid: 84d95fd7599da9148bfdd7c91a1bd6bf, type: 3}

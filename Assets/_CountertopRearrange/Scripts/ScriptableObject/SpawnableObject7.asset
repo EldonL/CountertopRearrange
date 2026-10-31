@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: SpawnableObject7
   m_EditorClassIdentifier: Assembly-CSharp::CounterTopRearrange.SpawnableObjectSO
   displayName: Crown
-  menuImage: {fileID: 21300000, guid: 17d65c698f3e4eb2b3cac3753ff49240, type: 3}
+  menuImage: {fileID: 21300000, guid: cf74f9013defecf4a8b1d397ad1e9fd0, type: 3}
   prefab: {fileID: 3781446964664321474, guid: 9b615b4df41053a42a407d386b2241b4, type: 3}

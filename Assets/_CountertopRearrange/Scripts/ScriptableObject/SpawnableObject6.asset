@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: SpawnableObject6
   m_EditorClassIdentifier: Assembly-CSharp::CounterTopRearrange.SpawnableObjectSO
   displayName: Hat
-  menuImage: {fileID: 21300000, guid: b721a7b91cd344c981ede42172cdec36, type: 3}
+  menuImage: {fileID: 21300000, guid: 0a30d1f14192a044886c2f7d539e27b4, type: 3}
   prefab: {fileID: 3952692635883924369, guid: 679aa667854bc994ba1f0d7669e8427a, type: 3}

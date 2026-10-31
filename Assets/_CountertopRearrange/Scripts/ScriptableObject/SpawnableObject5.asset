@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: SpawnableObject5
   m_EditorClassIdentifier: Assembly-CSharp::CounterTopRearrange.SpawnableObjectSO
   displayName: Piggy Bank
-  menuImage: {fileID: 21300000, guid: baee100b617241f7bbd7d2e185080e2b, type: 3}
+  menuImage: {fileID: 21300000, guid: 96f00079d5563ed45ac8964ee0c4b80c, type: 3}
   prefab: {fileID: 8805445510405251592, guid: fa3df6b70bf478341a9954cb362b45b1, type: 3}

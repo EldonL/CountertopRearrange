@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: SpawnableObject0
   m_EditorClassIdentifier: Assembly-CSharp::CounterTopRearrange.SpawnableObjectSO
   displayName: Blender
-  menuImage: {fileID: 21300000, guid: 67404957a0ff404ab01b584957d0be11, type: 3}
+  menuImage: {fileID: 21300000, guid: b5560e13f37f1f749a318955a7f91888, type: 3}
   prefab: {fileID: 6081966303601822800, guid: 8dea3515e49b0e84cbb2253db8f7a41a, type: 3}
