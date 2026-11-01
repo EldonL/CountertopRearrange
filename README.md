@@ -1,4 +1,4 @@
-# CountertopRearrange
+# Space Rearrange
 For the Meta Global AI Hackathon 2026
 
 # Model used: 
@@ -17,6 +17,7 @@ For the Meta Global AI Hackathon 2026
   3. Answer flows through MuseSparkVision.onAnswer → ObjectPlacementController.OnVisionAnswer() → PlacementAnswerParser
      → viewport raycast onto the ARCore counter plane → anchored spawn.
 
+# Project
 This project let's you point at the counter. ARCore will then recognize the surfaces. You select an object you want to place on the counter. Take a picture, send it to muse, let Muse spark figure out where to put it. Then it returns the answer and your object will spawn in the correct place. 
 This works on Android phones. 
 
