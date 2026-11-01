@@ -30,4 +30,10 @@ This isn't just placing virtual objects in a room. It's giving AI the ability to
 
 Works on Android phones
 
+# Video
+https://www.youtube.com/watch?v=2kUAL-EyHI4
+
+# twitter
+https://x.com/VPlayuh/status/2116967884727660807
+
 1. For the build to work you must enter your own api key. You can enter by going to hierarchy > MuseSparkVision > INspector > MuseSparkVision compoennt > Api Key Override field
