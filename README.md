@@ -18,7 +18,16 @@ For the Meta Global AI Hackathon 2026
      → viewport raycast onto the ARCore counter plane → anchored spawn.
 
 # Project
-This project let's you point at the counter. ARCore will then recognize the surfaces. You select an object you want to place on the counter. Take a picture, send it to muse, let Muse spark figure out where to put it. Then it returns the answer and your object will spawn in the correct place. 
-This works on Android phones. 
+What if AI could look at your surroundings and understand exactly where an object belongs?
+
+Our project combines the power of Meta Muse Spark with augmented reality to turn everyday spaces into intelligent environments.
+
+Simply point your camera at a counter. ARCore detects the real-world surface, and you choose an object you want to place. Then, we send an image of your surroundings to Meta Muse Spark, allowing it to analyze the scene, understand the environment, and determine the most appropriate placement for your object.
+
+Muse Spark returns its placement recommendation, and ARCore brings that decision to life by spawning the object in the real world.
+
+This isn't just placing virtual objects in a room. It's giving AI the ability to understand a space and decide how digital objects should interact with it.
+
+Works on Android phones
 
 1. For the build to work you must enter your own api key. You can enter by going to hierarchy > MuseSparkVision > INspector > MuseSparkVision compoennt > Api Key Override field
