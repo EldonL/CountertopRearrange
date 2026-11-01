@@ -36,4 +36,7 @@ https://www.youtube.com/watch?v=2kUAL-EyHI4
 # twitter
 https://x.com/VPlayuh/status/2116967884727660807
 
-1. For the build to work you must enter your own api key. You can enter by going to hierarchy > MuseSparkVision > INspector > MuseSparkVision compoennt > Api Key Override field
+# Other notes
+
+1. Unity version 6000.3.12f1
+2. For the build to work you must enter your own api key. You can enter by going to hierarchy > MuseSparkVision > INspector > MuseSparkVision compoennt > Api Key Override field
